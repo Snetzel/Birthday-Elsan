@@ -42,6 +42,7 @@
                         <tr>
                             <th>Name</th>
                             <th>Birthday</th>
+                            <th>action</th>
                         </tr>
                     </thead>
                     <!-- badan tabel -->
@@ -55,9 +56,14 @@
                                 <td>{{ birthday.name }}</td>
                                 <!-- menampilkan isi kolom month dan day -->
                                 <td>{{ birthday.month }}/{{ birthday.day }}</td>
+                                <td>
+                                    <a href="/edit/{{ birthday['id'] }}">Edit</a>
+                                    <a href="/delete/{{ birthday['id'] }}"
+                                    onclick="return confirm('Are you sure to delete it?');">Delete</a>
+                                </td>
                             </tr>
                         <!-- akhir dari perulangan -->
-                        {% endFor %}
+                        {% endfor %}
                     </tbody>
                 <!-- penutupan tabel -->
                 </table>
